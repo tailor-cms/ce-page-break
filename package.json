@@ -1,5 +1,5 @@
 {
-  "name": "ce-page-break",
+  "name": "@tailor-cms/ce-page-break",
   "description": "Tailor CMS page break element",
   "version": "0.0.1",
   "author": "Studion <info@gostudion.com> (https://github.com/tailor-cms)",

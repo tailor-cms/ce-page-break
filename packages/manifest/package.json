@@ -1,5 +1,5 @@
 {
-  "name": "tce-manifest",
+  "name": "@tailor-cms/ce-page-break-manifest",
   "description": "Tailor CMS page break element",
   "author": "Studion <info@gostudion.com> (https://github.com/tailor-cms)",
   "type": "module",
