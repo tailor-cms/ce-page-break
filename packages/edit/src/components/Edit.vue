@@ -1,5 +1,5 @@
 <template>
-  <VSheet class="tce-container pa-1" color="primray-darken-3">
+  <VSheet class="tce-container pa-1" color="primary-darken-3">
     Section break
     <VIcon class="ml-4 pb-1" color="secondary-lighten-2" size="24">
       mdi-format-page-break
