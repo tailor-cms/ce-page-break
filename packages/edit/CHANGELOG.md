@@ -1,5 +1,11 @@
 # @tailor-cms/ce-page-break-edit
 
+## 0.0.4
+
+### Patch Changes
+
+- Remove prefix from element type.
+
 ## 0.0.3
 
 ### Patch Changes
