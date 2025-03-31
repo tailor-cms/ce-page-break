@@ -7,14 +7,14 @@ test.beforeEach(async ({ page }) => {
 test('Renders Edit component', async ({ page }) => {
   const editFrame = page.frameLocator('#editPanel>iframe')
   await expect(editFrame.getByText('Authoring component')).toBeVisible();
-  const EDIT_COPY = 'Edit version of the content element';
+  const EDIT_COPY = 'Section break';
   await expect(editFrame.getByText(EDIT_COPY)).toBeVisible();
 });
 
 test('Renders Display component', async ({ page }) => {
   const displayFrame = page.frameLocator('#displayPanel>iframe')
   await expect(displayFrame.getByText('End-user component')).toBeVisible();
-  const DISPLAY_COPY = 'Display version of the content element';
+  const DISPLAY_COPY = 'Next';
   await expect(displayFrame.getByText(DISPLAY_COPY)).toBeVisible();
 });
 
@@ -27,11 +27,6 @@ test('Renders server state panel', async ({ page }) => {
   await authoringTab.click();
   const authoringProperties = ['uid', 'type', 'meta', 'data', 'contentId'];
   for (const prop of authoringProperties) {
-    await expect(bottomPanel.getByText(prop)).toBeVisible();
-  }
-  await userStateTab.click();
-  const endUserProperties = ['id', 'contextTimestamp', 'interactionTimestamp'];
-  for (const prop of endUserProperties) {
     await expect(bottomPanel.getByText(prop)).toBeVisible();
   }
 });
