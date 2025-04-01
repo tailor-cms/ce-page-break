@@ -1,5 +1,11 @@
 # @tailor-cms/ce-page-break-manifest
 
+## 0.0.5
+
+### Patch Changes
+
+- Bump dependencies, update type, export d.ts files.
+
 ## 0.0.4
 
 ### Patch Changes
