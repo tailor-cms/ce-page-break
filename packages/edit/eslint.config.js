@@ -3,7 +3,7 @@ import tailorConfig from '@tailor-cms/eslint-config';
 export default [
   ...tailorConfig,
   {
-    ignores: ['**/components.d.ts', 'dist/**'],
+    ignores: ['dist/**'],
   },
   {
     languageOptions: {

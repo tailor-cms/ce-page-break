@@ -7,10 +7,10 @@
 </template>
 
 <script setup lang="ts">
-import { Element } from '@tailor-cms/ce-page-break-manifest';
+import type { Element } from '@tailor-cms/ce-page-break-manifest';
 
 const props = defineProps<{ element: Element; userState: any }>();
-const emit = defineEmits(['interaction']);
+const emit = defineEmits<{ interaction: [payload: { id: number }] }>();
 
 const submit = () => emit('interaction', { id: props.element.id });
 </script>
