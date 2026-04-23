@@ -1,13 +1,46 @@
-import type { HookMap, ServerModule } from '@tailor-cms/cek-common';
+import type {
+  BeforeDisplayHook,
+  HookMap,
+  OnUserInteractionHook,
+  ServerModule,
+} from '@tailor-cms/cek-common';
 import { initState, type } from '@tailor-cms/ce-page-break-manifest';
 import type { Element } from '@tailor-cms/ce-page-break-manifest';
 
-export const hookMap: HookMap<Element> = new Map();
+// Detect if hooks are running in CEK (used for mocking end-system runtime)
+const IS_CEK = process.env.CEK_RUNTIME;
+// Don't use in production, use only when IS_CEK=true
+const USER_STATE: Record<string, any> = {};
+
+export const beforeDisplay: BeforeDisplayHook<Element> = (
+  _element,
+  context,
+) => {
+  return { ...context, ...USER_STATE };
+};
+
+export const onUserInteraction: OnUserInteractionHook<Element> = (
+  _element,
+  context,
+  payload,
+) => {
+  if (IS_CEK) context.clickedAt = payload.clickedAt;
+  return { updateDisplayState: true };
+};
+
+export const hookMap: HookMap<Element> = new Map(
+  Object.entries({
+    beforeDisplay,
+    onUserInteraction,
+  }),
+);
 
 const serverModule: ServerModule<Element> = {
   type,
   initState,
   hookMap,
+  beforeDisplay,
+  onUserInteraction,
 };
 
 export default serverModule;

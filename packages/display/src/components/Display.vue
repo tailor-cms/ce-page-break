@@ -9,10 +9,10 @@
 <script setup lang="ts">
 import type { Element } from '@tailor-cms/ce-page-break-manifest';
 
-const props = defineProps<{ element: Element; userState: any }>();
-const emit = defineEmits<{ interaction: [payload: { id: number }] }>();
+defineProps<{ element: Element; userState: any }>();
+const emit = defineEmits<{ interaction: [payload: { clickedAt: number }] }>();
 
-const submit = () => emit('interaction', { id: props.element.id });
+const submit = () => emit('interaction', { clickedAt: Date.now() });
 </script>
 
 <style scoped>
