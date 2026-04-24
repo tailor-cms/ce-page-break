@@ -7,6 +7,7 @@ const ELEMENT_ID = 'test-page-break-display';
 
 test.beforeEach(async ({ page }) => {
   await elementClient.reset(ELEMENT_ID);
+  await elementClient.resetState(ELEMENT_ID);
   await page.goto(`/?id=${ELEMENT_ID}`);
   await page.waitForLoadState('networkidle');
 });
@@ -24,8 +25,4 @@ test('Clicking Next emits an interaction', async ({ page }) => {
   await expect(
     bottomPanel.userStateWindow.getByText('clickedAt').first(),
   ).toBeVisible();
-});
-
-test.afterAll(async () => {
-  await elementClient.reset(ELEMENT_ID);
 });

@@ -15,7 +15,3 @@ test('Renders section break label', async ({ page }) => {
   const edit = new Edit(page);
   await expect(edit.root).toContainText('Section break');
 });
-
-test.afterAll(async () => {
-  await elementClient.reset(ELEMENT_ID);
-});
