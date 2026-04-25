@@ -28,7 +28,7 @@ const ui = {
 
 const manifest: ElementManifest = {
   type,
-  version: '1.0',
+  version,
   name,
   ssr: false,
   initState,
