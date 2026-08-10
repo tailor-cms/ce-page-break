@@ -2,6 +2,7 @@
   "name": "@tailor-cms/ce-page-break-edit",
   "description": "Tailor CMS page break authoring component",
   "author": "Studion <info@gostudion.com> (https://github.com/tailor-cms)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tailor-cms/ce-page-break.git",
