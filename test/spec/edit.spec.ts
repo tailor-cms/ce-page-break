@@ -15,3 +15,9 @@ test('Renders section break label', async ({ page }) => {
   const edit = new Edit(page);
   await expect(edit.root).toContainText('Section break');
 });
+
+test('Exposes the break as a separator', async ({ page }) => {
+  const edit = new Edit(page);
+  // Attached rather than visible — the divider renders as a zero-height <hr>.
+  await expect(edit.separator).toBeAttached();
+});
